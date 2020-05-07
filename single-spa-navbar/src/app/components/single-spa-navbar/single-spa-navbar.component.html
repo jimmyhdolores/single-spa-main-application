@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="['/']" (click)="showDiv()"> Home </a>
+      <a mat-button [routerLink]="['/file-manipulation']" (click)="hideDiv()"> NPMRC File Manipulation </a>
+      <a mat-button [routerLink]="['/hardware-details']" (click)="hideDiv()"> System Hardware Details </a>
+      <a mat-button [routerLink]="['/angular-trees']" (click)="hideDiv()"> Folder Structure </a>
+      <a mat-button [routerLink]="['/angular-charts']" (click)="hideDiv()"> Memory Details </a>
+      <a mat-button [routerLink]="['/angular-terminal']" (click)="hideDiv()"> Angular Terminal </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<h1 *ngIf="headerDiv">Single SPA</h1>

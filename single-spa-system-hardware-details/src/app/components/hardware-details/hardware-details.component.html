@@ -1,0 +1,137 @@
+<div *ngIf="loading" class="loader"></div>
+<div class="parent">
+  <div class="child box"><i class="fas fa-microchip"></i>CPU Information
+    <table id="customers" style="margin-top: 20px;">
+      <tr>
+        <td>Manufacturer</td>
+        <td>{{cpuDetails.manufacturer}}</td>
+      </tr>
+      <tr>
+        <td>Brand</td>
+        <td>{{cpuDetails.brand}}</td>
+      </tr>
+      <tr>
+        <td>Vendor</td>
+        <td>{{cpuDetails.vendor}}</td>
+      </tr>
+      <tr>
+        <td>Physical Cores</td>
+        <td>{{cpuDetails.physicalCores}}</td>
+      </tr>
+      <tr>
+        <td>Socket</td>
+        <td>{{cpuDetails.socket}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="child open">
+    <div class="box">Battery Information
+      <table id="customers" style="margin-top: 20px;">
+        <tr>
+          <td>Has Battery</td>
+          <td>{{batteryDetails.hasbattery}}</td>
+        </tr>
+        <tr>
+          <td>Is Charging</td>
+          <td>{{batteryDetails.ischarging}}</td>
+        </tr>
+        <tr>
+          <td>Capacity Unit</td>
+          <td>{{batteryDetails.capacityUnit}}</td>
+        </tr>
+        <tr>
+          <td>Voltage</td>
+          <td>{{batteryDetails.voltage}}</td>
+        </tr>
+        <tr>
+          <td>Percent</td>
+          <td>{{batteryDetails.percent}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="box">
+      Memory Information
+      <table id="customers" style="margin-top: 20px;">
+        <tr>
+          <td>Total</td>
+          <td>{{memoryDetails.total}}</td>
+        </tr>
+        <tr>
+          <td>Free</td>
+          <td>{{memoryDetails.free}}</td>
+        </tr>
+        <tr>
+          <td>Used</td>
+          <td>{{memoryDetails.used}}</td>
+        </tr>
+        <tr>
+          <td>Active</td>
+          <td>{{memoryDetails.active}}</td>
+        </tr>
+        <tr>
+          <td>Available</td>
+          <td>{{memoryDetails.available}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="box">
+      Bios Information
+      <table id="customers" style="margin-top: 20px;">
+        <tr>
+          <td>Vendor</td>
+          <td>{{boisDetails.vendor}}</td>
+        </tr>
+        <tr>
+          <td>Version</td>
+          <td>{{boisDetails.version}}</td>
+        </tr>
+        <tr>
+          <td>Release Date</td>
+          <td>{{boisDetails.releaseDate}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="box">
+      Baseboard Information
+      <table id="customers" style="margin-top: 20px;">
+        <tr>
+          <td>Manufacturer</td>
+          <td>{{baseBoardDetails.manufacturer}}</td>
+        </tr>
+        <tr>
+          <td>Model</td>
+          <td>{{baseBoardDetails.model}}</td>
+        </tr>
+        <tr>
+          <td>Version</td>
+          <td>{{baseBoardDetails.version}}</td>
+        </tr>
+        <tr>
+          <td>Serial</td>
+          <td>{{baseBoardDetails.serial}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="box">
+    Graphics Information
+    <table id="customers" style="margin-top: 20px;">
+      <tr>
+        <td>Vendor</td>
+        <td>{{graphicsDetails.vendor}}</td>
+      </tr>
+      <tr>
+        <td>Model</td>
+        <td>{{graphicsDetails.model}}</td>
+      </tr>
+      <tr>
+        <td>Bus</td>
+        <td>{{graphicsDetails.bus}}</td>
+      </tr>
+      <tr>
+        <td>Vram Dynamic</td>
+        <td>{{graphicsDetails.vramDynamic}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
