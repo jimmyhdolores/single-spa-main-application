@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './hardware-details.component.html',
   styleUrls: ['./hardware-details.component.css']
 })
-export class HardwareDetailsComponent implements OnInit {
+export class HardwareDetailsComponent implements OnInit, OnDestroy {
 
   private subscriptionData: Subscription;
   cpuDetails;
@@ -32,7 +32,7 @@ export class HardwareDetailsComponent implements OnInit {
       .getSystemHardwareDetailsData()
       .subscribe(
         (response) => {
-          if (response) {
+          if (response.status) {
             this.cpuDetails =
               response.hardwareDetailsData.content.cpuData;
             this.batteryDetails =
@@ -46,6 +46,9 @@ export class HardwareDetailsComponent implements OnInit {
             this.graphicsDetails =
               response.hardwareDetailsData.content.graphicsData.controllers[0];
             this.loading = false;
+          } else {
+            this.loading = false;
+            alert(response.hardwareDetailsData.content);
           }
         },
         (error) => {
