@@ -1,3 +1,39 @@
-2020-05-11 09:03:00.997 INFO  Single-Spa-Application Started For Getting Hardware Detail|ApplicationRouting|getHardwareDetails 
-2020-05-11 09:03:00.997 INFO  SystemInformationDataAcess|getHardwareDetails  
-2020-05-11 09:03:03.306 DEBUG SystemInformationDataAcess|getHardwareDetails|Final Data {"cpuData":{"manufacturer":"Intel®","brand":"Core™ i7-8665U","vendor":"GenuineIntel","family":"6","model":"142","stepping":"12","revision":"","voltage":"","speed":"1.90","speedmin":"","speedmax":"2.11","governor":"","cores":8,"physicalCores":4,"processors":1,"socket":"BGA1528","cache":{"l1d":0,"l1i":0,"l2":1048576,"l3":8388608}},"memoryData":{"total":16981368832,"free":7913693184,"used":9067675648,"active":9067675648,"available":7913693184,"buffers":0,"cached":0,"slab":0,"buffcache":0,"swaptotal":3087007744,"swapused":33554432,"swapfree":3053453312},"batteryData":{"hasbattery":true,"cyclecount":0,"ischarging":false,"designedcapacity":0,"maxcapacity":0,"currentcapacity":0,"voltage":7.628,"capacityUnit":"mWh","percent":56,"timeremaining":-1,"acconnected":false,"type":"","model":"","manufacturer":"","serial":"","designcapacity":0},"biosData":{"vendor":"Dell Inc.","version":"DELL   - 1072009","releaseDate":"2019-04-30","revision":""},"baseboardData":{"manufacturer":"Dell Inc.","model":"0PYRY5","version":"A00","serial":"/G2R45Y2/CNCMK0098E019E/","assetTag":""},"graphicsData":{"controllers":[{"vendor":"Intel Corporation","model":"Intel(R) UHD Graphics 620","bus":"PCI","vram":1024,"vramDynamic":true}],"displays":[{"vendor":"(Standard monitor types)","model":"Generic PnP Monitor","main":true,"builtin":true,"connection":"INTERNAL","resolutionx":1920,"resolutiony":1080,"sizex":29,"sizey":17,"pixeldepth":32,"currentResX":1280,"currentResY":720,"positionX":0,"positionY":0,"currentRefreshRate":60}]}} 
+2020-05-11 09:49:23.636 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:50:13.041 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:50:13.054 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0p"}]} 
+2020-05-11 09:50:32.307 INFO  Single-Spa-Application Started For Writing to npmrc file|ApplicationRouting|writeFileRoute 
+2020-05-11 09:50:32.307 INFO  FileManipulation|fileWrite|fileContent polpo=78909 
+2020-05-11 09:50:32.322 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:50:32.341 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0ppolpo"}]} 
+2020-05-11 09:50:39.625 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:50:39.636 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0ppolpo"}]} 
+2020-05-11 09:50:41.094 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:50:41.106 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0ppolpo"}]} 
+2020-05-11 09:50:42.591 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:50:42.605 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0ppolpo"}]} 
+2020-05-11 09:50:43.033 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:50:43.044 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0ppolpo"}]} 
+2020-05-11 09:51:39.294 INFO  Single-Spa-Application Started For Writing to npmrc file|ApplicationRouting|writeFileRoute 
+2020-05-11 09:51:39.294 INFO  FileManipulation|fileWrite|fileContent polik=yuy787 
+2020-05-11 09:51:39.324 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:51:39.336 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0p"},{"key":"polpo","value":"78909"},{"key":"polik","value":"yuy787"}]} 
+2020-05-11 09:52:00.541 INFO  Single-Spa-Application Started For Writing to npmrc file|ApplicationRouting|writeFileRoute 
+2020-05-11 09:52:00.541 INFO  FileManipulation|fileWrite|fileContent klo=iu90o 
+2020-05-11 09:52:00.566 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:52:00.578 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[]} 
+2020-05-11 09:52:03.958 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:52:03.972 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0p"},{"key":"polpo","value":"78909"},{"key":"polik","value":"yuy787"},{"key":"klo","value":"iu90o"}]} 
+2020-05-11 09:52:27.383 INFO  Single-Spa-Application Started For Editing Value to npmrc file|ApplicationRouting|valueEditFileRoute 
+2020-05-11 09:52:27.384 INFO  FileManipulation|fileValueEdit|value lol 
+2020-05-11 09:52:27.520 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:52:27.534 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0p00"},{"key":"polpo","value":"78909"},{"key":"polik","value":"yuy787"},{"key":"klo","value":"iu90o"}]} 
+2020-05-11 09:52:53.479 INFO  Single-Spa-Application Started For Editing Key to npmrc file|ApplicationRouting|keyEditFileRoute 
+2020-05-11 09:52:53.479 INFO  FileManipulation|fileKeyEdit|value 78909 
+2020-05-11 09:52:53.609 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:52:53.620 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[]} 
+2020-05-11 09:52:59.169 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:52:59.182 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0p00"},{"key":"polpo88989","value":"78909"},{"key":"polik","value":"yuy787"},{"key":"klo","value":"iu90o"}]} 
+2020-05-11 09:53:30.975 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:53:31.000 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0p00"},{"key":"polpo88989","value":"78909"},{"key":"polik","value":"yuy787"},{"key":"klo","value":"iu90o"}]} 
+2020-05-11 09:53:58.183 INFO  Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute 
+2020-05-11 09:53:58.195 DEBUG FileManipulation|fileRead|finalData {"NPMRCData":[{"key":"lol","value":"po0p00"},{"key":"polpo88989","value":"78909"},{"key":"polik","value":"yuy787"},{"key":"klo","value":"iu90o"}]} 

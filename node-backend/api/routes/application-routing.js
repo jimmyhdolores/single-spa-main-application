@@ -20,7 +20,9 @@ class ApplicationRouting {
   }
 
   readFileRoute(req, res, next) {
-    console.log("Reading File Route");
+    logger.info(
+      "Single-Spa-Application Started For Reading npmrc file|ApplicationRouting|readFileRoute"
+    );
     fileManipulation.fileRead().then((result) => {
       if (result) {
         res.status(200).json({
@@ -33,7 +35,9 @@ class ApplicationRouting {
   }
 
   writeFileRoute(req, res, next) {
-    console.log("Writing File Route");
+    logger.info(
+      "Single-Spa-Application Started For Writing to npmrc file|ApplicationRouting|writeFileRoute"
+    );
     fileManipulation.fileWrite(req).then((result) => {
       if (result) {
         res.status(200).json({
@@ -46,7 +50,9 @@ class ApplicationRouting {
   }
 
   keyEditFileRoute(req, res, next) {
-    console.log("Editing File Route");
+    logger.info(
+      "Single-Spa-Application Started For Editing Key to npmrc file|ApplicationRouting|keyEditFileRoute"
+    );
     fileManipulation.fileKeyEdit(req).then((result) => {
       if (result) {
         res.status(200).json({
@@ -59,7 +65,9 @@ class ApplicationRouting {
   }
 
   valueEditFileRoute(req, res, next) {
-    console.log("Editing File Route");
+    logger.info(
+      "Single-Spa-Application Started For Editing Value to npmrc file|ApplicationRouting|valueEditFileRoute"
+    );
     fileManipulation.fileValueEdit(req).then((result) => {
       if (result) {
         res.status(200).json({
@@ -102,12 +110,12 @@ class ApplicationRouting {
    * return type is response with response code 200
    */
   getFileFolderDetailsDirectoryTree(req, res, next) {
-    console.log("ApplicationRouting|getFolderDetails");
+    logger.info(
+      "Single-Spa-Application Started For Getting The Directory Structure|ApplicationRouting|getFileFolderDetailsDirectoryTree"
+    );
     const data = folderDetails.getFolderDetails();
-    console.log("datas===================== ", data);
     if (data) {
       data.then((result) => {
-        console.log("result===================== ", result);
         if (result) {
           res.status(200).json({
             folderDetailsData: {
@@ -126,12 +134,12 @@ class ApplicationRouting {
   }
 
   getMemoryDetails(req, res, next) {
-    console.log("ApplicationRouting|getMemoryDetails");
+    logger.info(
+      "Single-Spa-Application Started For Getting The Memory Detail|ApplicationRouting|getMemoryDetails"
+    );
     const data = memoryDetails.getMemoryDetails();
-    console.log("datas===================== ", data);
     if (data) {
       data.then((result) => {
-        console.log("result===================== ", result);
         if (result) {
           res.status(200).json({
             hardwareDetailsData: {
@@ -150,12 +158,12 @@ class ApplicationRouting {
   }
 
   getDiskWiseMemoryDetails(req, res, next) {
-    console.log("ApplicationRouting|getDiskWiseMemoryDetails");
+    logger.info(
+      "Single-Spa-Application Started For Getting Disk Wise Memory Detail|ApplicationRouting|getDiskWiseMemoryDetails"
+    );
     const data = memoryDetails.getDiskWiseMemoryDetails();
-    console.log("datas===================== ", data);
     if (data) {
       data.then((result) => {
-        console.log("result===================== ", result);
         if (result) {
           res.status(200).json({
             hardwareDetailsData: {
@@ -174,12 +182,12 @@ class ApplicationRouting {
   }
 
   executeCommands(req, res, next) {
-    console.log("ApplicationRouting|executeCommands");
+    logger.info(
+      "Single-Spa-Application Started For Executing The Command|ApplicationRouting|executeCommands"
+    );
     const data = commands.executeCommands(req.params.commands);
-    console.log("datas===================== ", data);
     if (data) {
       data.then((result) => {
-        console.log("result===================== ", result);
         if (result) {
           res.status(200).json({
             commandOuput: {
