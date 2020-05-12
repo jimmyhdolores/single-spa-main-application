@@ -3,7 +3,7 @@
  */
 const promise = require("promise");
 const fs = require("fs");
-const directory = "D:/FilesFolderData";
+const directory = "C:/FilesFolderData";
 const PATH = require("path");
 const async = require("async");
 const logger = require("../service/logger").makeObject();

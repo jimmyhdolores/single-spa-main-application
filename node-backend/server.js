@@ -24,6 +24,8 @@ app.get('/api/getMemoryDetails', applicationRouting.getMemoryDetails);
 app.get('/api/getDiskWiseMemoryDetails', applicationRouting.getDiskWiseMemoryDetails);
 app.get('/api/getFolderDetailsDirectoryTree', applicationRouting.getFileFolderDetailsDirectoryTree);
 app.get('/api/executeCommands/:commands', applicationRouting.executeCommands);
+app.get('/api/getLoggingDetails', applicationRouting.getLoggingDetail);
+app.get('/api/clearLogFile', applicationRouting.clearLogFile);
 app.use((req, res, next) => {
     res.status(404).send('Page Not Found');
 });

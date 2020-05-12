@@ -1,38 +1,40 @@
 <div *ngIf="loading" class="loader"></div>
 
-<div><label>&nbsp;&nbsp;&nbsp;Memory Details</label></div>
-<div class="Row" *ngIf="!loading">
-  <div class="Column">
-    <google-chart #chart [title]="titlePie" [type]="typePie" [data]="data" [options]="optionsPie" [width]="width"
-      [height]="height">
-    </google-chart>
+<div id="memoryData">
+  <div><label>&nbsp;&nbsp;&nbsp;Memory Details</label></div>
+  <div class="Row" *ngIf="!loading">
+    <div class="Column">
+      <google-chart #chart [title]="titlePie" [type]="typePie" [data]="data" [options]="optionsPie" [width]="width"
+        [height]="height">
+      </google-chart>
+    </div>
+    <div class="Column">
+      <google-chart #chart [title]="titleBar" [type]="typeBar" [data]="data" [options]="options" [width]="width"
+        [height]="height">
+      </google-chart>
+    </div>
   </div>
-  <div class="Column">
-    <google-chart #chart [title]="titleBar" [type]="typeBar" [data]="data" [options]="options" [width]="width"
-      [height]="height">
-    </google-chart>
+
+  <div><label>&nbsp;&nbsp;&nbsp;Disk Drive Details</label></div>
+
+  <div>
+    <table>
+      <tr *ngFor="let item of diskWiseData">
+        <td>
+          <div class="Row" *ngIf="!loading">
+            <div class="Column">
+              <google-chart #chart [title]="'Pie Chart For '+item.mounted+' Drive'" [type]="typePie"
+                [data]="item.driveData" [options]="optionsPie" [width]="width" [height]="height">
+              </google-chart>
+            </div>
+            <div class="Column">
+              <google-chart #chart [title]="'Bar Chart For '+item.mounted+' Drive'" [type]="typeBar"
+                [data]="item.driveData" [options]="options" [width]="width" [height]="height">
+              </google-chart>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
-</div>
-
-<div><label>&nbsp;&nbsp;&nbsp;Disk Drive Details</label></div>
-
-<div>
-  <table>
-    <tr *ngFor="let item of diskWiseData">
-      <td>
-        <div class="Row" *ngIf="!loading">
-          <div class="Column">
-            <google-chart #chart [title]="'Pie Chart For '+item.mounted+' Drive'" [type]="typePie"
-              [data]="item.driveData" [options]="optionsPie" [width]="width" [height]="height">
-            </google-chart>
-          </div>
-          <div class="Column">
-            <google-chart #chart [title]="'Bar Chart For '+item.mounted+' Drive'" [type]="typeBar"
-              [data]="item.driveData" [options]="options" [width]="width" [height]="height">
-            </google-chart>
-          </div>
-        </div>
-      </td>
-    </tr>
-  </table>
 </div>

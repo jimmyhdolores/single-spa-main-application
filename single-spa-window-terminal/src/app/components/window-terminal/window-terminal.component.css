@@ -96,7 +96,14 @@ input[type="password"] {
 
 #wrapper {
   display: flex;
+  float: left;
+  width: 100%;
+  overflow-y: auto;
+  height: 350px;
+  border: 1px solid black;
+  margin-top: 10px;
 }
+
 
 #left {
   flex: 0 0 65%;

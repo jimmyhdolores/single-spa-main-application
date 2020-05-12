@@ -8,13 +8,14 @@ import { WindowTerminalService } from 'src/app/services/window-terminal.service'
   templateUrl: './window-terminal.component.html',
   styleUrls: ['./window-terminal.component.css']
 })
-export class WindowTerminalComponent implements OnInit {
+export class WindowTerminalComponent implements OnInit, OnDestroy {
 
   private subscriptionData: Subscription;
   content: string;
   showExecutedCommandResult: boolean = false;
   showExecutedCommands: boolean = false;
   loader: boolean = false;
+  showData: boolean = false;
   executeCommands = [];
   executedCommandName: string;
 
@@ -40,8 +41,10 @@ export class WindowTerminalComponent implements OnInit {
           this.executeCommands = response.commandOuput.content.executedCommands;
           this.showExecutedCommandResult = true;
           this.loader = false;
+          this.showData = true;
         } else {
           this.loader = false;
+          this.showData = false;
           alert(response.commandOuput.content.message);
         }
       },

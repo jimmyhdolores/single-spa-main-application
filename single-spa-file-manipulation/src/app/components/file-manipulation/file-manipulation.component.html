@@ -1,20 +1,29 @@
-<button class="button" (click)="addNpmrc()">Add Key</button>&nbsp;
-<button class="button" (click)="readFileData()">Reload Key</button>
-<table id="customers">
-  <tr>
-    <th>Key</th>
-    <th>Value</th>
-    <th>Action</th>
-  </tr>
-  <tr *ngFor="let data of dataFromFile">
-    <td>{{data.key}}</td>
-    <td>{{data.value}}</td>
-    <td><button class="button" (click)="editValueNpmrc(data)">Edit Value</button>&nbsp;&nbsp;
-      <button class="button" (click)="editKeyNpmrc(data)">Edit Key</button></td>
-  </tr>
-</table>
+<div *ngIf="loading" class="loader"></div>
+<button class="button" (click)="addNpmrc()" *ngIf="showTable">Add Key</button>&nbsp;
+<button class="button" (click)="readFileData()" *ngIf="showTable">Reload Key</button>
 
-<div style="margin-top: 10px;" *ngIf="showAddEdit">
+<div id="wrapper" *ngIf="showTable">
+  <table id="customers">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataFromFile">
+        <td>{{data.key}}</td>
+        <td>{{data.value}}</td>
+        <td><button class="button" (click)="editValueNpmrc(data)">Edit Value</button>&nbsp;&nbsp;
+          <button class="button" (click)="editKeyNpmrc(data)">Edit Key</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div style="margin-top: 10px; border:1px solid black;" *ngIf="showAddEdit">
   <div class="col-lg-12">
     <div class="panel panel-yellow">
       <div class="panel-heading advanceSearchHeader">

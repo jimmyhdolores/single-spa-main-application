@@ -15,6 +15,8 @@ export class FileManipulationComponent implements OnInit {
   dataFromFile;
   npmrcTitle = 'Add Key Value';
   showAddEdit = false;
+  showTable: boolean = true;
+  loading = true;
   npmrcData = {
     key: '',
     value: '',
@@ -28,23 +30,30 @@ export class FileManipulationComponent implements OnInit {
   }
 
   readFileData() {
+    this.loading = true;
     this.subscriptionData = this.readWriteService.readDataFromFile().subscribe(
       (response) => {
         if (response) {
           console.log('response===== ', response.fileData.content.NPMRCData);
           this.dataFromFile = response.fileData.content.NPMRCData;
+          this.showTable = true;
+          this.loading = false;
+        } else {
+          this.loading = false;
         }
       },
       (error) => {
+        this.loading = false;
         console.log(error);
       }
     );
   }
 
   addNpmrc(): void {
-    this.showAddEdit = true;
+    this.showTable = false;
     this.showInputBoxKey = false;
     this.showInputBoxValue = false;
+    this.showAddEdit = true;
   }
 
   hideNpmrc(): void {
@@ -54,6 +63,7 @@ export class FileManipulationComponent implements OnInit {
       value: '',
     };
     this.npmrcTitle = 'Add Key Value';
+    this.showTable = true;
   }
 
   addEditKeyValue() {
@@ -92,6 +102,7 @@ export class FileManipulationComponent implements OnInit {
     this.npmrcData.value = data.value;
     this.showInputBoxKey = true;
     this.showInputBoxValue = false;
+    this.showTable = false;
   }
 
   editKeyNpmrc(data) {
@@ -101,6 +112,7 @@ export class FileManipulationComponent implements OnInit {
     this.npmrcData.value = data.value;
     this.showInputBoxKey = false;
     this.showInputBoxValue = true;
+    this.showTable = false;
   }
 
   ngOnDestroy(): void {

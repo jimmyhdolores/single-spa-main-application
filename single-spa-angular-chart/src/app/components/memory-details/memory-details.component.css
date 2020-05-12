@@ -54,3 +54,12 @@
     transform: rotate(360deg);
   }
 }
+
+#memoryData {
+  float: left;
+  width: 100%;
+  overflow-y: auto;
+  height: 500px;
+  border: 1px solid black;
+  margin-top: 10px;
+}

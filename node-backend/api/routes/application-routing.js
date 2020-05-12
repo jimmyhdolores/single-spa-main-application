@@ -5,6 +5,7 @@ const hardwareDetails = require("../service/hardware-details-service").makeObjec
 const folderDetails = require("../service/folder-tree-structure-service").makeObject();
 const memoryDetails = require("../service/google-charts-service").makeObject();
 const commands = require("../service/angular-terminal-service").makeObject();
+const loggingDetails = require("../service/logging-details-service").makeObject();
 const logger = require("../service/logger").makeObject();
 
 class ApplicationRouting {
@@ -200,6 +201,58 @@ class ApplicationRouting {
       res.status(500).json({
         hardwareDetailsData: {
           content: "Error While Executing Commands",
+        },
+      });
+    }
+  }
+
+  getLoggingDetail(req, res, next) {
+    logger.info(
+      "Single-Spa-Application Started For Getting Log Details|ApplicationRouting|getLoggingDetail"
+    );
+    const data = loggingDetails.getLoggingDetail();
+    if (data) {
+      data.then((result) => {
+        if (result) {
+          res.status(200).json({
+            loggingOutput: {
+              content: result,
+              status: true,
+            },
+          });
+        }
+      });
+    } else {
+      res.status(500).json({
+        loggingOutput: {
+          message: "Error While Getting Logging Details",
+          status: false,
+        },
+      });
+    }
+  }
+
+  clearLogFile(req, res, next) {
+    logger.info(
+      "Single-Spa-Application Started For Clearing Logs|ApplicationRouting|clearLogFile"
+    );
+    const data = loggingDetails.clearLogFile();
+    if (data) {
+      data.then((result) => {
+        if (result) {
+          res.status(200).json({
+            loggingOutput: {
+              content: result,
+              status: true,
+            },
+          });
+        }
+      });
+    } else {
+      res.status(500).json({
+        loggingOutput: {
+          message: "Error While Clearing Log Details",
+          status: false,
         },
       });
     }

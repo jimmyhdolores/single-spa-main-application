@@ -1,6 +1,10 @@
 .parent {
   display: flex;
   flex-wrap: wrap;
+  float: left;
+  width: 100%;
+  overflow-y: auto;
+  height: 500px;
 }
 
 .open {
@@ -8,7 +12,7 @@
 }
 
 .box {
-  height: 400px;
+  height: 300px;
   width: 50%;
   border: 1px solid black;
   box-sizing: border-box;
@@ -41,42 +45,6 @@
   text-align: left;
   background-color: #4caf50;
   color: white;
-}
-
-.button {
-  background-color: #4caf50;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-.cancel {
-  background-color: red;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
 .container {

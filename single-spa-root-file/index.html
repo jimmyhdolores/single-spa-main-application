@@ -16,6 +16,7 @@
           "angular-trees": "http://localhost:4204/main.js",
           "angular-charts": "http://localhost:4205/main.js",
           "angular-terminal": "http://localhost:4206/main.js",
+          "logging-details": "http://localhost:4207/main.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.5/system/single-spa.min.js"
         }
       }
@@ -89,6 +90,16 @@
           },
           function (location) {
             return location.pathname.startsWith('/angular-terminal');
+          }
+        )
+
+        singleSpa.registerApplication(
+          'logging-details',
+          function () {
+            return System.import('logging-details');
+          },
+          function (location) {
+            return location.pathname.startsWith('/logging-details');
           }
         )
 
