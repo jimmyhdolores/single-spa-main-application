@@ -3,12 +3,14 @@
     <span class="menu-spacer"></span>
     <div>
       <a mat-button [routerLink]="['/']" (click)="showDiv()"> Home </a>
-      <a mat-button [routerLink]="['/file-manipulation']" (click)="hideDiv()"> NPMRC File Manipulation </a>
-      <a mat-button [routerLink]="['/hardware-details']" (click)="hideDiv()"> System Hardware Details </a>
-      <a mat-button [routerLink]="['/angular-trees']" (click)="hideDiv()"> Folder Structure </a>
-      <a mat-button [routerLink]="['/angular-charts']" (click)="hideDiv()"> Memory Details </a>
-      <a mat-button [routerLink]="['/angular-terminal']" (click)="hideDiv()"> Angular Terminal </a>
-      <a mat-button [routerLink]="['/logging-details']" (click)="hideDiv()"> Logging Detail </a>
+      <a mat-button [routerLink]="['/file-manipulation']" (click)="hideDiv('Npmrc File Manipulation')"> NPMRC File
+        Manipulation </a>
+      <a mat-button [routerLink]="['/hardware-details']" (click)="hideDiv('System Hardware Details')"> System Hardware
+        Details </a>
+      <a mat-button [routerLink]="['/angular-trees']" (click)="hideDiv('Folder Structure')"> Folder Structure </a>
+      <a mat-button [routerLink]="['/angular-charts']" (click)="hideDiv('Memory Details')"> Memory Details </a>
+      <a mat-button [routerLink]="['/angular-terminal']" (click)="hideDiv('Angular Terminal')"> Angular Terminal </a>
+      <a mat-button [routerLink]="['/logging-details']" (click)="hideDiv('Audit Logs')"> Audit Logs </a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -28,9 +28,31 @@ export class LoggingDetailService {
       );
   }
 
+  writeAuditDataToFile(data: any) {
+    let auditData = { 'auditDataContent': data };
+    console.log('data============ ', auditData);
+    return this.http.post(this.baseUrlString + '/api/writeAuditDataToFile/', auditData).
+      pipe(map((res: Response) => res.json()),
+        catchError(<T>(error: any, result?: T) => {
+          return of(result as T);
+        })
+      );
+  }
+
   clearLogFile() {
     return this.http
       .get(this.baseUrlString + '/api/clearLogFile')
+      .pipe(
+        map((res: Response) => res.json()),
+        catchError(<T>(error: any, result?: T) => {
+          return of(result as T);
+        })
+      );
+  }
+
+  getAllHistoryAudit() {
+    return this.http
+      .get(this.baseUrlString + '/api/getAllAuditData')
       .pipe(
         map((res: Response) => res.json()),
         catchError(<T>(error: any, result?: T) => {

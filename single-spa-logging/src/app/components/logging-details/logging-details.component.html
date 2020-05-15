@@ -1,6 +1,26 @@
 <div class="loader" *ngIf="loader"></div>
-<div class="main">
+<!-- <div class="main">
     <div id="textData" contenteditable="true" (dblclick)="clearLog()">
         {{content}}
     </div>
+</div> -->
+<button class="button" (click)="getAuditingData()">Show Current Audit</button>&nbsp;
+<button class="button" (click)="getAllHistoryAudit()"n>Show All History Audit</button>
+<div id="wrapper" *ngIf="showTable">
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Data</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of auditDataContent">
+                <td>{{data.eventName}}</td>
+                <td>{{data.eventData}}</td>
+                <td>{{data.time |date :'short'}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

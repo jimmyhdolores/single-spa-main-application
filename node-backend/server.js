@@ -26,6 +26,8 @@ app.get('/api/getFolderDetailsDirectoryTree', applicationRouting.getFileFolderDe
 app.get('/api/executeCommands/:commands', applicationRouting.executeCommands);
 app.get('/api/getLoggingDetails', applicationRouting.getLoggingDetail);
 app.get('/api/clearLogFile', applicationRouting.clearLogFile);
+app.post('/api/writeAuditDataToFile', applicationRouting.writeAuditDataToFile);
+app.get('/api/getAllAuditData', applicationRouting.getAllAuditData);
 app.use((req, res, next) => {
     res.status(404).send('Page Not Found');
 });

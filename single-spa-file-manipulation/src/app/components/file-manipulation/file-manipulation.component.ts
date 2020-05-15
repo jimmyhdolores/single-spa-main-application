@@ -1,6 +1,7 @@
 import { FileManipulationService } from './../../services/file-manipulation.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'file-manipulation-file-manipulation',
@@ -21,13 +22,19 @@ export class FileManipulationComponent implements OnInit {
     key: '',
     value: '',
   };
+  auditDataContent: any = [];
 
-
-  constructor(private readWriteService: FileManipulationService) { }
+  constructor(private readWriteService: FileManipulationService) {
+  }
 
   ngOnInit(): void {
     this.readFileData();
+    window.addEventListener('auditData', (evt: CustomEvent) => {
+      this.auditDataContent = evt.detail.auditContent;
+      console.log('file manipulation==== ', this.auditDataContent);
+    });
   }
+
 
   readFileData() {
     this.loading = true;
@@ -64,6 +71,9 @@ export class FileManipulationComponent implements OnInit {
     };
     this.npmrcTitle = 'Add Key Value';
     this.showTable = true;
+    this.auditDataContent.push({ 'eventName': 'Add Key', 'eventData': 'Admin Clicked On Cancel Key ', 'time': new Date() });
+    var event = new CustomEvent('auditData', { detail: { auditContent: this.auditDataContent } });
+    window.dispatchEvent(event);
   }
 
   addEditKeyValue() {
@@ -81,6 +91,28 @@ export class FileManipulationComponent implements OnInit {
             this.showAddEdit = false;
             this.showInputBoxKey = false;
             this.showInputBoxValue = false;
+            if (this.npmrcTitle === 'Add Key Value') {
+              this.auditDataContent.push({
+                'eventName': 'Added Key Value', 'eventData': 'Admin Added New Key:'
+                  + this.npmrcData.key + ' and New Value: ' + this.npmrcData.value, 'time': new Date()
+              });
+              var event = new CustomEvent('auditData', { detail: { auditContent: this.auditDataContent } });
+              window.dispatchEvent(event);
+            } else if (this.npmrcTitle === 'Edit Value') {
+              this.auditDataContent.push({
+                'eventName': 'Edited Value', 'eventData': 'Admin Edited Value:'
+                  + this.npmrcData.value + ' for Key: ' + this.npmrcData.key, 'time': new Date()
+              });
+              var event = new CustomEvent('auditData', { detail: { auditContent: this.auditDataContent } });
+              window.dispatchEvent(event);
+            } else {
+              this.auditDataContent.push({
+                'eventName': 'Edited Key', 'eventData': 'Admin Edited Key:' +
+                  this.npmrcData.key + ' and Value: ' + this.npmrcData.value, 'time': new Date()
+              });
+              var event = new CustomEvent('auditData', { detail: { auditContent: this.auditDataContent } });
+              window.dispatchEvent(event);
+            }
             this.readFileData();
             alert(response.fileData.content);
             this.npmrcData = {

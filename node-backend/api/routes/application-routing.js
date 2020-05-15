@@ -257,6 +257,44 @@ class ApplicationRouting {
       });
     }
   }
+
+  writeAuditDataToFile(req, res, next) {
+    logger.info(
+      "Single-Spa-Application Started For Writing Audit Data|ApplicationRouting|writeAuditDataToFile"
+    );
+    loggingDetails.writeAuditDataToFile(req).then((result) => {
+      if (result) {
+        res.status(200).json({
+          fileData: {
+            content: result,
+          },
+        });
+      }
+    });
+  }
+
+  getAllAuditData(req, res, next) {
+    logger.info(
+      "Single-Spa-Application Started For Getting Log Details|ApplicationRouting|getAllAuditData"
+    );
+    const data = loggingDetails.getAllAuditData();
+    if (data) {
+      data.then((result) => {
+        if (result) {
+          res.status(200).json({
+            result,
+          });
+        }
+      });
+    } else {
+      res.status(500).json({
+        loggingOutput: {
+          message: "Error While Getting Logging Details",
+          status: false,
+        },
+      });
+    }
+  }
 }
 
 module.exports = ApplicationRouting;

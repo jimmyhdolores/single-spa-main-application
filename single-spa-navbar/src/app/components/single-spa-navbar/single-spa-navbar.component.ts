@@ -11,10 +11,15 @@ export class SingleSpaNavbarComponent implements OnInit {
   headerDiv = true;
   constructor() { }
 
+  auditDataContent: any = [];
+
   ngOnInit(): void {
   }
 
-  hideDiv() {
+  hideDiv(tabName: string) {
+    this.auditDataContent.push({ 'eventName': 'Navbar Click Event', 'eventData': 'Admin Clicked ' + tabName, 'time': new Date() });
+    var event = new CustomEvent('auditData', { detail: { auditContent: this.auditDataContent } });
+    window.dispatchEvent(event);
     this.headerDiv = false;
   }
 
